@@ -1,0 +1,30 @@
+.navbar{
+  height: 50px;
+  background-color: teal;
+  display: flex;
+  justify-content: center;
+
+  .navbar_container{
+    width: 100%;
+    max-width: 1024px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navbar_logo{
+      font-weight: 500;
+    }
+
+    .navbar_items{
+
+      .navbar_button{
+        margin-left: 20px;
+        border: none;
+        padding: 5px 10px;
+        color: teal;
+        cursor: pointer;
+      }
+    }
+  }
+}
