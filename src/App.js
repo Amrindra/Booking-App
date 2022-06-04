@@ -1,10 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from "./pages/homepage/Homepage";
+import HotelList from "./pages/HotelList/HotelList";
+import SingleHotelPage from "./pages/singleHotel/SingleHotelPage";
 import "./styles.css";
 
 export default function App() {
   return (
-    <div className="app">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/hotels" element={<HotelList />} />
+        <Route path="/hotels/:id" element={<SingleHotelPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
