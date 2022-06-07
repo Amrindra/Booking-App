@@ -8,8 +8,20 @@ import {
   faTaxi
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 
 const Header = () => {
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: null,
+      key: "selection"
+    }
+  ]);
+
   return (
     <div className="header">
       <div className="header_container">
@@ -58,6 +70,14 @@ const Header = () => {
           <div className="header_search_item">
             <FontAwesomeIcon icon={faCalendarDays} className="header_icon" />
             <span className="header_search_text">Date to data</span>
+
+            {/* This DateRange is from react-date-range library */}
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => setDate([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={date}
+            />
           </div>
 
           <div className="header_search_item">
