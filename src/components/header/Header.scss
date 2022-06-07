@@ -1,8 +1,9 @@
 .header{
   display: flex;
-  background-color: teal;
+  background-color: var(--black-color);
   color: white;
   justify-content: center;
+  position: relative;
 
 
   .header_container{
@@ -39,6 +40,41 @@
       border: none;
       padding: 10px;
       cursor: pointer;
+    }
+
+    .header_search{
+      height: 50px;
+      background-color: white;
+      border: 3px solid #febb02;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-radius: 5px;
+      position: absolute;
+      bottom: -25px;
+      width: 100%;
+      max-width: 1024px;
+
+      
+      .header_search_item{
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .header_search_input{
+          border: none;
+          outline: none;
+
+        }
+
+
+        .header_icon{
+          color: lightgray;
+        }
+
+      }
     }
   }
 }

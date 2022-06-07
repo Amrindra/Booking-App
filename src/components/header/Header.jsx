@@ -1,7 +1,9 @@
 import "./Header.scss";
 import {
   faBed,
+  faCalendarDays,
   faCar,
+  faPerson,
   faPlane,
   faTaxi
 } from "@fortawesome/free-solid-svg-icons";
@@ -51,6 +53,22 @@ const Header = () => {
               placeholder="What are you looking for?"
               className="header_search_input"
             />
+          </div>
+
+          <div className="header_search_item">
+            <FontAwesomeIcon icon={faCalendarDays} className="header_icon" />
+            <span className="header_search_text">Date to data</span>
+          </div>
+
+          <div className="header_search_item">
+            <FontAwesomeIcon icon={faPerson} className="header_icon" />
+            <span className="header_search_text">
+              2 adults 2 children 1 room
+            </span>
+          </div>
+
+          <div className="header_search_item">
+            <button className="header_button">Search</button>
           </div>
         </div>
       </div>
