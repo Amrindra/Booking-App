@@ -1,6 +1,6 @@
 .header{
   display: flex;
-  background-color: #003580;
+  background-color: teal;
   color: white;
   justify-content: center;
 
@@ -13,6 +13,7 @@
     .header_lists{
       display: flex;
       gap: 40px;
+      margin-bottom: 40px;
 
       .header_list_item{
         display: flex;
@@ -25,7 +26,19 @@
             border-radius: 10px;
         }
       }
-      
+    }
+
+    .header_desc{
+      margin: 20px 0 ;
+    }
+
+    .header_button{
+      background-color: rgb(69, 194, 194);
+      color: white;
+      font-weight: 500;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
     }
   }
 }
