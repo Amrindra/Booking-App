@@ -114,12 +114,14 @@
                   color: white;
                 }
 
+                &:disabled{
+                  cursor: not-allowed;
+                }
+
               }
             }
           }
         }
-
-
       }
     }
   }

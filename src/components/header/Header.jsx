@@ -87,7 +87,11 @@ const Header = () => {
           </div>
 
           <div className="header_search_item">
-            <FontAwesomeIcon icon={faCalendarDays} className="header_icon" />
+            <FontAwesomeIcon
+              onClick={() => setShowDatePicker(!showDatePicker)}
+              icon={faCalendarDays}
+              className="header_icon"
+            />
             <span
               onClick={() => setShowDatePicker(!showDatePicker)}
               className="header_search_text"
@@ -109,73 +113,88 @@ const Header = () => {
           </div>
 
           <div className="header_search_item">
-            <FontAwesomeIcon icon={faPerson} className="header_icon" />
-            <span className="header_search_text">
+            <FontAwesomeIcon
+              icon={faPerson}
+              className="header_icon"
+              onClick={() => setShowOptions(!showOptions)}
+            />
+            <span
+              className="header_search_text"
+              onClick={() => setShowOptions(!showOptions)}
+            >
               {`${options.adult} adult - ${options.children} children - ${options.room} room`}
             </span>
 
-            <div className="options">
-              <div className="option_items">
-                <span className="option_text">Adult</span>
-                <div className="option_counter_wrapper">
-                  <button
-                    className="option_counter_button"
-                    onClick={() => handleOption("adult", "decrement")}
-                  >
-                    -
-                  </button>
-                  <span className="option_counter_number">{options.adult}</span>
-                  <button
-                    className="option_counter_button"
-                    onClick={() => handleOption("adult", "increment")}
-                  >
-                    +
-                  </button>
+            {showOptions && (
+              <div className="options">
+                <div className="option_items">
+                  <span className="option_text">Adult</span>
+                  <div className="option_counter_wrapper">
+                    <button
+                      disabled={options.adult <= 1}
+                      className="option_counter_button"
+                      onClick={() => handleOption("adult", "decrement")}
+                    >
+                      -
+                    </button>
+                    <span className="option_counter_number">
+                      {options.adult}
+                    </span>
+                    <button
+                      className="option_counter_button"
+                      onClick={() => handleOption("adult", "increment")}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              <div className="option_items">
-                <span className="option_text">Children</span>
-                <div className="option_counter_wrapper">
-                  <button
-                    className="option_counter_button"
-                    onClick={() => handleOption("children", "decrement")}
-                  >
-                    -
-                  </button>
-                  <span className="option_counter_number">
-                    {options.children}
-                  </span>
-                  <button
-                    className="option_counter_button"
-                    onClick={() => handleOption("children", "increment")}
-                  >
-                    +
-                  </button>
+                <div className="option_items">
+                  <span className="option_text">Children</span>
+                  <div className="option_counter_wrapper">
+                    <button
+                      disabled={options.children <= 0}
+                      className="option_counter_button"
+                      onClick={() => handleOption("children", "decrement")}
+                    >
+                      -
+                    </button>
+                    <span className="option_counter_number">
+                      {options.children}
+                    </span>
+                    <button
+                      className="option_counter_button"
+                      onClick={() => handleOption("children", "increment")}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              <div className="option_items">
-                <span className="option_text">Room</span>
-                <div className="option_counter_wrapper">
-                  <button
-                    className="option_counter_button"
-                    onClick={() => handleOption("room", "decrement")}
-                  >
-                    -
-                  </button>
-                  <span className="option_counter_number">{options.room}</span>
-                  <button
-                    className="option_counter_button"
-                    onClick={() => handleOption("room", "increment")}
-                  >
-                    +
-                  </button>
+                <div className="option_items">
+                  <span className="option_text">Room</span>
+                  <div className="option_counter_wrapper">
+                    <button
+                      disabled={options.room <= 1}
+                      className="option_counter_button"
+                      onClick={() => handleOption("room", "decrement")}
+                    >
+                      -
+                    </button>
+                    <span className="option_counter_number">
+                      {options.room}
+                    </span>
+                    <button
+                      className="option_counter_button"
+                      onClick={() => handleOption("room", "increment")}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
-
           <div className="header_search_item">
             <button className="header_button">Search</button>
           </div>
