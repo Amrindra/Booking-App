@@ -8,7 +8,7 @@
 
   .header_container{
     width: 100%;
-    max-width: 1024px;
+    max-width: var(--max-width);
     margin: 20px 0 100px 0;
 
     &.list_mode{
@@ -58,7 +58,7 @@
       position: absolute;
       bottom: -25px;
       width: 100%;
-      max-width: 1024px;
+      max-width: var(--max-width);
 
       
       .header_search_item{
@@ -79,6 +79,7 @@
         .date_picker{
           position: absolute;
           top: 50px;
+          z-index: 99;
         }
 
         .options{
@@ -89,6 +90,7 @@
           border-radius: 5px;
           -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+          z-index: 99;
 
 
           .option_items{
@@ -96,6 +98,7 @@
             justify-content: space-between;
             width: 200px;
             margin: 10px;
+            
 
             .option_counter_wrapper{
               display: flex;
@@ -103,6 +106,7 @@
               gap: 10px;
               font-size: 1rem;
               color: black;
+              
 
               .option_counter_button{
                 width: 30px;
