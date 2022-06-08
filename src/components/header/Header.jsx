@@ -26,9 +26,20 @@ const Header = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
-    children: 1,
+    children: 0,
     room: 1
   });
+
+  const handleOption = (name, operation) => {
+    setOptions((prev) => {
+      return {
+        ...prev,
+        // [name] come from the parameters passing through onClick. "adult, children, room"
+        [name]:
+          operation === "decrement" ? options[name] - 1 : options[name] + 1
+      };
+    });
+  };
 
   return (
     <div className="header">
@@ -107,27 +118,59 @@ const Header = () => {
               <div className="option_items">
                 <span className="option_text">Adult</span>
                 <div className="option_counter_wrapper">
-                  <button className="option_counter_button">-</button>
-                  <span className="option_counter_number">1</span>
-                  <button className="option_counter_button">+</button>
+                  <button
+                    className="option_counter_button"
+                    onClick={() => handleOption("adult", "decrement")}
+                  >
+                    -
+                  </button>
+                  <span className="option_counter_number">{options.adult}</span>
+                  <button
+                    className="option_counter_button"
+                    onClick={() => handleOption("adult", "increment")}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
 
               <div className="option_items">
                 <span className="option_text">Children</span>
                 <div className="option_counter_wrapper">
-                  <button className="option_counter_button">-</button>
-                  <span className="option_counter_number">0</span>
-                  <button className="option_counter_button">+</button>
+                  <button
+                    className="option_counter_button"
+                    onClick={() => handleOption("children", "decrement")}
+                  >
+                    -
+                  </button>
+                  <span className="option_counter_number">
+                    {options.children}
+                  </span>
+                  <button
+                    className="option_counter_button"
+                    onClick={() => handleOption("children", "increment")}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
 
               <div className="option_items">
                 <span className="option_text">Room</span>
                 <div className="option_counter_wrapper">
-                  <button className="option_counter_button">-</button>
-                  <span className="option_counter_number">1</span>
-                  <button className="option_counter_button">+</button>
+                  <button
+                    className="option_counter_button"
+                    onClick={() => handleOption("room", "decrement")}
+                  >
+                    -
+                  </button>
+                  <span className="option_counter_number">{options.room}</span>
+                  <button
+                    className="option_counter_button"
+                    onClick={() => handleOption("room", "increment")}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
             </div>
