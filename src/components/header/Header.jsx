@@ -12,15 +12,23 @@ import { useState } from "react";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import { format } from "date-fns";
 
 const Header = () => {
   const [date, setDate] = useState([
     {
       startDate: new Date(),
-      endDate: null,
+      endDate: new Date(),
       key: "selection"
     }
   ]);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 1,
+    room: 1
+  });
 
   return (
     <div className="header">
@@ -62,29 +70,67 @@ const Header = () => {
             <FontAwesomeIcon icon={faBed} className="header_icon" />
             <input
               type="text"
-              placeholder="What are you looking for?"
+              placeholder="Search..."
               className="header_search_input"
             />
           </div>
 
           <div className="header_search_item">
             <FontAwesomeIcon icon={faCalendarDays} className="header_icon" />
-            <span className="header_search_text">Date to data</span>
+            <span
+              onClick={() => setShowDatePicker(!showDatePicker)}
+              className="header_search_text"
+            >{`${format(date[0].startDate, "MM/dd/yyy")} to ${format(
+              date[0].endDate,
+              "MM/dd/yyy"
+            )}`}</span>
 
             {/* This DateRange is from react-date-range library */}
-            <DateRange
-              editableDateInputs={true}
-              onChange={(item) => setDate([item.selection])}
-              moveRangeOnFirstSelection={false}
-              ranges={date}
-            />
+            {showDatePicker && (
+              <DateRange
+                editableDateInputs={true}
+                onChange={(item) => setDate([item.selection])}
+                moveRangeOnFirstSelection={false}
+                ranges={date}
+                className="date_picker"
+              />
+            )}
           </div>
 
           <div className="header_search_item">
             <FontAwesomeIcon icon={faPerson} className="header_icon" />
             <span className="header_search_text">
-              2 adults 2 children 1 room
+              {`${options.adult} adult - ${options.children} children - ${options.room} room`}
             </span>
+
+            <div className="options">
+              <div className="option_items">
+                <span className="option_text">Adult</span>
+                <div className="option_counter_wrapper">
+                  <button className="option_counter_button">-</button>
+                  <span className="option_counter_number">1</span>
+                  <button className="option_counter_button">+</button>
+                </div>
+              </div>
+
+              <div className="option_items">
+                <span className="option_text">Children</span>
+                <div className="option_counter_wrapper">
+                  <button className="option_counter_button">-</button>
+                  <span className="option_counter_number">0</span>
+                  <button className="option_counter_button">+</button>
+                </div>
+              </div>
+
+              <div className="option_items">
+                <span className="option_text">Room</span>
+                <div className="option_counter_wrapper">
+                  <button className="option_counter_button">-</button>
+                  <span className="option_counter_number">1</span>
+                  <button className="option_counter_button">+</button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="header_search_item">
