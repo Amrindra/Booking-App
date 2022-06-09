@@ -11,6 +11,8 @@
     cursor: pointer;
     // giving flex 1 so that all images chlid will be the same size
     flex: 1;
+    border: 1px solid lightgray;
+   
 
     img{
       width: 100%;
@@ -20,11 +22,14 @@
 
     .prop_titles h1{
       font-size: 1.5rem;
+      padding: 10px;
     }
 
     .prop_titles h2{
       font-size: 1.2rem;
       font-weight: 300;
+      padding: 0 10px 10px 10px;
+
     }
   }
 }

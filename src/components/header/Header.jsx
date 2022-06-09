@@ -87,7 +87,7 @@ const Header = ({ type }) => {
                 <FontAwesomeIcon icon={faBed} className="header_icon" />
                 <input
                   type="text"
-                  placeholder="Search..."
+                  placeholder="Search"
                   className="header_search_input"
                 />
               </div>

@@ -20,7 +20,7 @@ const PropertyList = () => {
           alt=""
         />
         <div className="prop_titles">
-          <h1>Aprtments</h1>
+          <h1>Apartments</h1>
           <h2>233 Hotels</h2>
         </div>
       </div>
