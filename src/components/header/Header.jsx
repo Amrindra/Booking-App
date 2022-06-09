@@ -13,6 +13,7 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ type }) => {
   const [date, setDate] = useState([
@@ -24,6 +25,7 @@ const Header = ({ type }) => {
   ]);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
+  const [destination, setDestination] = useState("");
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
@@ -39,6 +41,13 @@ const Header = ({ type }) => {
           operation === "decrement" ? options[name] - 1 : options[name] + 1
       };
     });
+  };
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    //Sending destination, date, and options state to hotel page
+    navigate("/hotels", { state: { destination, date, options } });
   };
 
   return (
@@ -89,6 +98,7 @@ const Header = ({ type }) => {
                   type="text"
                   placeholder="Search"
                   className="header_search_input"
+                  onChange={(event) => setDestination(event.target.value)}
                 />
               </div>
 
@@ -202,7 +212,9 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="header_search_item">
-                <button className="header_button">Search</button>
+                <button className="header_button" onClick={handleSearch}>
+                  Search
+                </button>
               </div>
             </div>
           </>

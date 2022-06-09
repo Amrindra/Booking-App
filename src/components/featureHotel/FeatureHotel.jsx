@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./FeatureHotel.scss";
+import { faStarSharp } from "@fortawesome/free-solid-svg-icons";
 
 const FeatureHotel = () => {
   return (
@@ -28,6 +30,7 @@ const FeatureHotel = () => {
         <span className="feature_hotel_price">$200/night</span>
 
         <div className="feature_hotel_rating">
+          {/* <FontAwesomeIcon icon={faStarSharp} /> */}
           <button>5</button>
           <span>Excellent</span>
         </div>

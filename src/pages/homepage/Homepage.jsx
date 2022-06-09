@@ -5,6 +5,7 @@ import HeroBanner from "../../components/heroBanner/HeroBanner";
 import PropertyList from "../../components/propertyList/PropertyList";
 import FeatureHotel from "../../components/featureHotel/FeatureHotel";
 import Subcribe from "../../components/subcribe/Subcribe";
+import Footer from "../../components/footer/Footer";
 
 const Homepage = () => {
   return (
@@ -19,6 +20,7 @@ const Homepage = () => {
         <h1 className="homepage_title">Homes gests love</h1>
         <FeatureHotel />
         <Subcribe />
+        <Footer />
       </section>
     </>
   );

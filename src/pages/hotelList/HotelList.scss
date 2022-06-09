@@ -1,0 +1,29 @@
+.hotel_list_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+
+  .hotel_list_warpper{
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    gap: 20px;
+
+
+    .hotel_list_search{
+      flex: 1;
+      background-color: teal;
+      padding: 10px;
+      border-radius: 10px;
+      position: sticky;
+      top: 10px;
+    }
+
+    .hotel_list_result{
+      flex: 3;
+    }
+  }
+
+
+}
