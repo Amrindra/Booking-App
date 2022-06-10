@@ -20,8 +20,8 @@ const Homepage = () => {
         <h1 className="homepage_title">Homes gests love</h1>
         <FeatureHotel />
         <Subcribe />
-        <Footer />
       </section>
+      <Footer />
     </>
   );
 };

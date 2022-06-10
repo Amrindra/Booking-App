@@ -1,13 +1,16 @@
 .footer{
   width: 100%;
-  max-width: var(--max-width);
   font-size: 0.75rem;
+  background-color: teal;
+  height: 40vh;
 
   .footer_lists{
-    width: 100%;
+    max-width: var(--max-width);
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
+    padding-top: 50px;
   }
   
   .footer_list{
@@ -15,7 +18,7 @@
 
     .footer_list_item{
       margin-bottom: 10px;
-      color: gray;
+      color: white;
       cursor: pointer;
     }
 

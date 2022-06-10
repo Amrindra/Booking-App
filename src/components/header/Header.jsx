@@ -47,6 +47,7 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     //Sending destination, date, and options state to hotel page
+    //To get these state information we can use useLocation from react-router-dom
     navigate("/hotels", { state: { destination, date, options } });
   };
 
@@ -111,9 +112,9 @@ const Header = ({ type }) => {
                 <span
                   onClick={() => setShowDatePicker(!showDatePicker)}
                   className="header_search_text"
-                >{`${format(date[0].startDate, "MM/dd/yyy")} to ${format(
+                >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
                   date[0].endDate,
-                  "MM/dd/yyy"
+                  "MM/dd/yyyy"
                 )}`}</span>
 
                 {/* This DateRange is from react-date-range library */}

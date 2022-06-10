@@ -10,6 +10,7 @@
     width: 100%;
     max-width: var(--max-width);
     margin: 20px 0 100px 0;
+    text-align: center;
 
     &.list_mode{
       margin: 20px 0 0 0 ;
@@ -19,6 +20,7 @@
       display: flex;
       gap: 40px;
       margin-bottom: 40px;
+      justify-content: center;
       // position: sticky;
       // top: 0;
 
