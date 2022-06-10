@@ -27,7 +27,8 @@
       margin-bottom: 10px;
 
       label{
-        font-size: 12px;
+        font-size: 20px;
+        color: white;
       }
 
       input{
@@ -36,13 +37,31 @@
         padding: 5px;
       }
 
-      span{
+      .date_picker_span{
         height: 30px;
         padding: 5px;
         background-color: white;
         display: flex;
         align-items: center;
         cursor: pointer;
+      }
+
+      
+    }
+
+    .list_option_wrapper{
+      padding: 10px;
+
+      .list_option_Item{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        color: white;
+        font-size: 12px;
+        
+        .list_option_input{
+          width: 50px;
+        }
       }
     }
 
@@ -51,5 +70,14 @@
     }
   }
 
-
+.search_btn{
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 40px;
+    width: 100%;
+    color: teal;
+    cursor: pointer;
+  
+}
 }

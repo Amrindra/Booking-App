@@ -32,6 +32,7 @@ const HotelList = () => {
             <div className="hotel_list_items">
               <label>Cehck-in Date</label>
               <span
+                className="date_picker_span"
                 onClick={() => setShowDatePicker(!showDatePicker)}
               >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
                 date[0].endDate,
@@ -45,6 +46,57 @@ const HotelList = () => {
                 />
               )}
             </div>
+
+            <div className="hotel_list_items">
+              <label>Options</label>
+              <div className="list_option_wrapper">
+                <div className="list_option_Item">
+                  <span className="list_option_text">
+                    Min price <small>per night</small>
+                  </span>
+                  <input type="number" className="list_option_input" />
+                </div>
+
+                <div className="list_option_Item">
+                  <span className="list_option_text">
+                    Max price <small>per night</small>
+                  </span>
+                  <input type="number" className="list_option_input" />
+                </div>
+
+                <div className="list_option_Item">
+                  <span className="list_option_text">Adult</span>
+                  <input
+                    type="number"
+                    className="list_option_input"
+                    placeholder={options.adult}
+                    min={1}
+                  />
+                </div>
+
+                <div className="list_option_Item">
+                  <span className="list_option_text">Children</span>
+                  <input
+                    type="number"
+                    className="list_option_input"
+                    placeholder={options.children}
+                    min={0}
+                  />
+                </div>
+
+                <div className="list_option_Item">
+                  <span className="list_option_text">Room</span>
+                  <input
+                    type="number"
+                    className="list_option_input"
+                    placeholder={options.room}
+                    min={1}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button className="search_btn">Search</button>
           </div>
           <div className="hotel_list_result"></div>
         </div>
