@@ -20,6 +20,32 @@
       top: 10px;
     }
 
+    .hotel_list_items{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 10px;
+
+      label{
+        font-size: 12px;
+      }
+
+      input{
+        height: 30px;
+        border: none;
+        padding: 5px;
+      }
+
+      span{
+        height: 30px;
+        padding: 5px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
     .hotel_list_result{
       flex: 3;
     }

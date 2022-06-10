@@ -3,7 +3,7 @@ import "./Subcribe.scss";
 const Subcribe = () => {
   return (
     <div className="subcribe">
-      <h1 className="subcribe_title">Save time, save money!</h1>
+      <h1 className="subcribe_title">Want the best deals?</h1>
       <span className="subcribe_desc">
         Sign up and we will send the best deals to you.
       </span>

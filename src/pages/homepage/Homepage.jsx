@@ -21,6 +21,7 @@ const Homepage = () => {
         <FeatureHotel />
         <Subcribe />
       </section>
+
       <Footer />
     </>
   );

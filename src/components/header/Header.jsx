@@ -125,6 +125,7 @@ const Header = ({ type }) => {
                     moveRangeOnFirstSelection={false}
                     ranges={date}
                     className="date_picker"
+                    minDate={new Date()}
                   />
                 )}
               </div>
@@ -212,6 +213,7 @@ const Header = ({ type }) => {
                   </div>
                 )}
               </div>
+
               <div className="header_search_item">
                 <button className="header_button" onClick={handleSearch}>
                   Search
