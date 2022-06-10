@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
+import SearchResult from "../../components/searchResult/SearchResult";
 
 const HotelList = () => {
   //This location will contain the informations from the Header component where we search, select date and option from Header component
@@ -98,7 +99,21 @@ const HotelList = () => {
 
             <button className="search_btn">Search</button>
           </div>
-          <div className="hotel_list_result"></div>
+
+          <div className="hotel_list_result">
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+            <SearchResult />
+          </div>
         </div>
       </section>
     </>
