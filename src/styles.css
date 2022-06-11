@@ -1,6 +1,7 @@
 :root {
   --black-color: black;
   --max-width: 1024px;
+  --main-color: teal;
 }
 
 * {

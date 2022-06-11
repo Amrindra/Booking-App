@@ -4,9 +4,9 @@ const SearchResult = () => {
   return (
     <div className="search_result">
       <img
+        className="search_result_img"
         src="https://lh3.googleusercontent.com/proxy/rpCOCUeL5DTvc3qiQw93r5qFPhBgPzrrFfl-UZHTKJWxde5ZFqS1g5WkJcaPaeU5WQ7tqySl88q2teTB1yABDmSRA-MIxUWdgyrF3qWX6JDk6I6a8F0-q1t-6j3stlxKXtodNwluRtuBnHrjJe1lyEw8CYkzFw=w296-h202-n-k-rw-no-v1"
         alt=""
-        className="search_result_img"
       />
 
       <div className="search_result_desc">
@@ -24,6 +24,7 @@ const SearchResult = () => {
           You can cancel later, so lock in this great price today!
         </span>
       </div>
+
       <div className="search_result_details">
         <div className="search_result_ratings">
           <span>Excellent</span>
