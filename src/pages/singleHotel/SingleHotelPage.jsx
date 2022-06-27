@@ -1,12 +1,26 @@
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleArrowLeft,
+  faCircleArrowRight,
+  faCircleXmark,
+  faLocationDot
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/navbar/Navbar";
 import Subscribe from "../../components/subcribe/Subcribe";
 import Footer from "../../components/footer/Footer";
 import "./SingleHotelPage.scss";
+import { useState } from "react";
 
 const SingleHotelPage = () => {
+  const [sliderNumber, setSliderNumber] = useState(0);
+  const [show, setShow] = useState(false);
+
+  const handleShow = (index) => {
+    setSliderNumber(index);
+    setShow(!show);
+  };
+
   const photos = [
     {
       src:
@@ -40,6 +54,20 @@ const SingleHotelPage = () => {
       <Header type="list" />
 
       <div className="singleHotelPage_container">
+        {show && (
+          <div className="slider">
+            <FontAwesomeIcon icon={faCircleXmark} className="close" />
+            <FontAwesomeIcon icon={faCircleArrowLeft} className="arrow" />
+            <div className="slider_wrapper">
+              <img
+                src={photos[sliderNumber].src}
+                alt=""
+                className="slider_img"
+              />
+            </div>
+            <FontAwesomeIcon icon={faCircleArrowRight} className="arrow" />
+          </div>
+        )}
         <div className="singleHotelPage_wrapper">
           <button className="book_now_btn">Book Now!</button>
           <h1 className="title">Grand Hotel</h1>
@@ -54,9 +82,14 @@ const SingleHotelPage = () => {
           </div>
 
           <div className="singleHotelPage_images">
-            {photos.map((photo) => (
+            {photos.map((photo, index) => (
               <div className="singleHotelPage_images_wrapper">
-                <img src={photo.src} alt="" className="hotel_image" />
+                <img
+                  onClick={() => handleShow(index)}
+                  src={photo.src}
+                  alt=""
+                  className="hotel_image"
+                />
               </div>
             ))}
           </div>
