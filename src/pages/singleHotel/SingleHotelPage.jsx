@@ -2,6 +2,8 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/navbar/Navbar";
+import Subscribe from "../../components/subcribe/Subcribe";
+import Footer from "../../components/footer/Footer";
 import "./SingleHotelPage.scss";
 
 const SingleHotelPage = () => {
@@ -39,6 +41,7 @@ const SingleHotelPage = () => {
 
       <div className="singleHotelPage_container">
         <div className="singleHotelPage_wrapper">
+          <button className="book_now_btn">Book Now!</button>
           <h1 className="title">Grand Hotel</h1>
           <div className="singleHotelPage_address">
             <FontAwesomeIcon icon={faLocationDot} />
@@ -61,7 +64,7 @@ const SingleHotelPage = () => {
           <div className="singleHotelPage_details">
             <div className="singleHotelPage_texts">
               <h1 className="title">Stay in the heart of Boston</h1>
-              <p>
+              <p className="singleHotelPage_desc">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
                 aut ullam similique repellat unde qui asperiores consectetur
                 facere eos numquam, sed illum autem ipsa quidem, rem at nam
@@ -85,6 +88,8 @@ const SingleHotelPage = () => {
           </div>
         </div>
       </div>
+      <Subscribe />
+      <Footer />
     </div>
   );
 };
