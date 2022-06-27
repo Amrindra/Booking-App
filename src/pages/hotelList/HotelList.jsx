@@ -21,6 +21,7 @@ const HotelList = () => {
       <Navbar />
       <Header type="list" />
 
+      {/* Hotel list search section */}
       <section className="hotel_list_container">
         <div className="hotel_list_warpper">
           <div className="hotel_list_search">
