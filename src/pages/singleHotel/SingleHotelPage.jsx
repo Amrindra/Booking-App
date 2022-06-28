@@ -21,6 +21,18 @@ const SingleHotelPage = () => {
     setShow(!show);
   };
 
+  const handleSlide = (direction) => {
+    let newSliderNumber;
+
+    if (direction === "left") {
+      newSliderNumber = sliderNumber === 0 ? 5 : sliderNumber - 1;
+    } else {
+      newSliderNumber = sliderNumber === 5 ? 0 : sliderNumber + 1;
+    }
+
+    setSliderNumber(newSliderNumber);
+  };
+
   const photos = [
     {
       src:
@@ -56,8 +68,16 @@ const SingleHotelPage = () => {
       <div className="singleHotelPage_container">
         {show && (
           <div className="slider">
-            <FontAwesomeIcon icon={faCircleXmark} className="close" />
-            <FontAwesomeIcon icon={faCircleArrowLeft} className="arrow" />
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              className="close"
+              onClick={() => setShow(false)}
+            />
+            <FontAwesomeIcon
+              icon={faCircleArrowLeft}
+              className="arrow"
+              onClick={() => handleSlide("left")}
+            />
             <div className="slider_wrapper">
               <img
                 src={photos[sliderNumber].src}
@@ -65,7 +85,11 @@ const SingleHotelPage = () => {
                 className="slider_img"
               />
             </div>
-            <FontAwesomeIcon icon={faCircleArrowRight} className="arrow" />
+            <FontAwesomeIcon
+              icon={faCircleArrowRight}
+              className="arrow"
+              onClick={() => handleSlide("right")}
+            />
           </div>
         )}
         <div className="singleHotelPage_wrapper">
